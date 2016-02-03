@@ -21,19 +21,44 @@
 */
 
 import UIKit
+import RealmSwift
 
 
 class CategoriesTableViewController: UITableViewController {
   
-  var categories = []
-
+    let realm = try! Realm()
+    lazy var categories: Results<Category> = { self.realm.objects(Category) }()
+    var selectedCategory: Category!
+    
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    populateDefaultCategories()
   }
   
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
     return .Default
   }
+    
+    func populateDefaultCategories() {
+        
+        if categories.count == 0 {
+            
+            try! realm.write() {
+                let defaultCategories = ["Birds", "Mammals", "Flora", "Reptiles", "Arachnids"]
+                
+                for category in defaultCategories {
+                    let newCategory = Category()
+                    newCategory.name = category
+                    self.realm.add(newCategory)
+                }
+            }
+            
+        categories = realm.objects(Category)
+    
+        }
+    }
+    
 }
 
 // MARK: - UITableViewDataSource
@@ -48,12 +73,16 @@ extension CategoriesTableViewController {
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath) 
+    let cell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath)
+    
+    let category = categories[indexPath.row]
+    cell.textLabel?.text = category.name
     
     return cell
   }
     
   override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath {
+    selectedCategory = categories[indexPath.row]
     
     return indexPath
   }

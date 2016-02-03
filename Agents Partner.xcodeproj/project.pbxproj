@@ -20,6 +20,7 @@
 		A2CFDAAA1B6A9B89007F3C15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CFDAA91B6A9B89007F3C15 /* Images.xcassets */; };
 		A9DCE2AA199155F00021D3FE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9DCE2A9199155F00021D3FE /* MapKit.framework */; };
 		ECC89EEC1C61EBEE00940D18 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ECC89EEB1C61EBEE00940D18 /* Podfile */; };
+		ECC89EEE1C61EEF900940D18 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC89EED1C61EEF900940D18 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +61,7 @@
 		A9DCE2A9199155F00021D3FE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CB25ECEFEDE57D83ED8F9D16 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC89EEB1C61EBEE00940D18 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		ECC89EED1C61EEF900940D18 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = SOURCE_ROOT; };
 		F37D74F266702F7762C59CD6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				17E5F2811BAEC74100D5B05F /* Specimen.swift */,
+				ECC89EED1C61EEF900940D18 /* Category.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				A2CFDA981B6A9788007F3C15 /* LogViewController.swift in Sources */,
 				A2CFDAA81B6A97E1007F3C15 /* SpecimenAnnotation.swift in Sources */,
 				A2CFDA991B6A9788007F3C15 /* MapViewController.swift in Sources */,
+				ECC89EEE1C61EEF900940D18 /* Category.swift in Sources */,
 				17E5F2821BAEC74100D5B05F /* Specimen.swift in Sources */,
 				A2CFDA9B1B6A9790007F3C15 /* LogCell.swift in Sources */,
 				A2CFDA9D1B6A979C007F3C15 /* CategoriesTableViewController.swift in Sources */,
