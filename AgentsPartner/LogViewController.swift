@@ -22,6 +22,7 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 class LogViewController: UITableViewController {
   
